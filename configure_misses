@@ -1,0 +1,8 @@
+Configure miss: augtool
+Configure miss: struct sockaddr_in6.sin6_len
+Configure miss: struct msghdr.msg_accrights
+Configure miss: struct msghdr.msg_accrightslen
+Configure miss: qb_log_file_reopen in -lqb
+Configure miss: t_open in -lnsl
+Configure miss: whether gcc supports -Wunknown-warning-option -Werror
+Configure miss: whether gcc supports "-Wunsigned-char"

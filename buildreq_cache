@@ -1,0 +1,6 @@
+3.0.3
+doxygen
+graphviz
+groff
+pkgconfig(zlib)
+zlib-dev
