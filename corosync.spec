@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDFD015CA555CB020 (discuss@corosync.org)
 #
 Name     : corosync
-Version  : 3.0.3
-Release  : 1
-URL      : https://github.com/corosync/corosync/releases/download/v3.0.3/corosync-3.0.3.tar.gz
-Source0  : https://github.com/corosync/corosync/releases/download/v3.0.3/corosync-3.0.3.tar.gz
-Source1  : https://github.com/corosync/corosync/releases/download/v3.0.3/corosync-3.0.3.tar.gz.asc
+Version  : 3.1.0
+Release  : 2
+URL      : https://github.com/corosync/corosync/releases/download/v3.1.0/corosync-3.1.0.tar.gz
+Source0  : https://github.com/corosync/corosync/releases/download/v3.1.0/corosync-3.1.0.tar.gz
+Source1  : https://github.com/corosync/corosync/releases/download/v3.1.0/corosync-3.1.0.tar.gz.asc
 Summary  : corosync
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -92,22 +92,22 @@ man components for the corosync package.
 
 
 %prep
-%setup -q -n corosync-3.0.3
-cd %{_builddir}/corosync-3.0.3
+%setup -q -n corosync-3.1.0
+cd %{_builddir}/corosync-3.1.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1582660288
+export SOURCE_DATE_EPOCH=1607059002
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
 export CFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FCFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
-export FFLAGS="$CFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FCFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
+export FFLAGS="$FFLAGS -O3 -ffat-lto-objects -flto=4 "
 export CXXFLAGS="$CXXFLAGS -O3 -ffat-lto-objects -flto=4 "
 %configure --disable-static
 make  %{?_smp_mflags}
@@ -117,13 +117,13 @@ export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-make VERBOSE=1 V=1 %{?_smp_mflags} check
+make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1582660288
+export SOURCE_DATE_EPOCH=1607059002
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/corosync
-cp %{_builddir}/corosync-3.0.3/LICENSE %{buildroot}/usr/share/package-licenses/corosync/87bb10215fd2b4c06b1ba1072ffea5ae7eae1800
+cp %{_builddir}/corosync-3.1.0/LICENSE %{buildroot}/usr/share/package-licenses/corosync/87bb10215fd2b4c06b1ba1072ffea5ae7eae1800
 %make_install
 
 %files
@@ -210,6 +210,7 @@ cp %{_builddir}/corosync-3.0.3/LICENSE %{buildroot}/usr/share/package-licenses/c
 /usr/share/man/man3/quorum_finalize.3
 /usr/share/man/man3/quorum_getquorate.3
 /usr/share/man/man3/quorum_initialize.3
+/usr/share/man/man3/quorum_model_initialize.3
 /usr/share/man/man3/quorum_overview.3
 /usr/share/man/man3/quorum_trackstart.3
 /usr/share/man/man3/quorum_trackstop.3
@@ -259,7 +260,7 @@ cp %{_builddir}/corosync-3.0.3/LICENSE %{buildroot}/usr/share/package-licenses/c
 /usr/lib64/libcpg.so.4
 /usr/lib64/libcpg.so.4.1.0
 /usr/lib64/libquorum.so.5
-/usr/lib64/libquorum.so.5.0.0
+/usr/lib64/libquorum.so.5.1.0
 /usr/lib64/libsam.so.4
 /usr/lib64/libsam.so.4.4.0
 /usr/lib64/libvotequorum.so.8
@@ -273,8 +274,8 @@ cp %{_builddir}/corosync-3.0.3/LICENSE %{buildroot}/usr/share/package-licenses/c
 %defattr(0644,root,root,0755)
 /usr/share/man/man5/corosync.conf.5
 /usr/share/man/man5/votequorum.5
+/usr/share/man/man7/cmap_keys.7
 /usr/share/man/man7/corosync_overview.7
-/usr/share/man/man8/cmap_keys.8
 /usr/share/man/man8/corosync-blackbox.8
 /usr/share/man/man8/corosync-cfgtool.8
 /usr/share/man/man8/corosync-cmapctl.8

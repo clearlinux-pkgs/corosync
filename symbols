@@ -83,6 +83,7 @@ libquorum.so.5:quorum_fd_get
 libquorum.so.5:quorum_finalize
 libquorum.so.5:quorum_getquorate
 libquorum.so.5:quorum_initialize
+libquorum.so.5:quorum_model_initialize
 libquorum.so.5:quorum_trackstart
 libquorum.so.5:quorum_trackstop
 libsam.so.4:COROSYNC_SAM_1.0
