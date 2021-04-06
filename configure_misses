@@ -1,8 +1,9 @@
 Configure miss: augtool
-Configure miss: struct sockaddr_in6.sin6_len
+Configure miss: knet_handle_crypto_set_config in -lknet
+Configure miss: knet_handle_get_onwire_ver in -lknet
 Configure miss: struct msghdr.msg_accrights
 Configure miss: struct msghdr.msg_accrightslen
+Configure miss: struct sockaddr_in6.sin6_len
 Configure miss: t_open in -lnsl
-Configure miss: knet_handle_crypto_set_config in -lknet
-Configure miss: whether gcc supports -Wunknown-warning-option -Werror
 Configure miss: whether gcc supports "-Wunsigned-char"
+Configure miss: whether gcc supports -Wunknown-warning-option -Werror

@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDFD015CA555CB020 (discuss@corosync.org)
 #
 Name     : corosync
-Version  : 3.1.0
-Release  : 2
-URL      : https://github.com/corosync/corosync/releases/download/v3.1.0/corosync-3.1.0.tar.gz
-Source0  : https://github.com/corosync/corosync/releases/download/v3.1.0/corosync-3.1.0.tar.gz
-Source1  : https://github.com/corosync/corosync/releases/download/v3.1.0/corosync-3.1.0.tar.gz.asc
+Version  : 3.1.1
+Release  : 3
+URL      : https://github.com/corosync/corosync/releases/download/v3.1.1/corosync-3.1.1.tar.gz
+Source0  : https://github.com/corosync/corosync/releases/download/v3.1.1/corosync-3.1.1.tar.gz
+Source1  : https://github.com/corosync/corosync/releases/download/v3.1.1/corosync-3.1.1.tar.gz.asc
 Summary  : corosync
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -92,15 +92,15 @@ man components for the corosync package.
 
 
 %prep
-%setup -q -n corosync-3.1.0
-cd %{_builddir}/corosync-3.1.0
+%setup -q -n corosync-3.1.1
+cd %{_builddir}/corosync-3.1.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1607059002
+export SOURCE_DATE_EPOCH=1617674069
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -120,10 +120,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1607059002
+export SOURCE_DATE_EPOCH=1617674069
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/corosync
-cp %{_builddir}/corosync-3.1.0/LICENSE %{buildroot}/usr/share/package-licenses/corosync/87bb10215fd2b4c06b1ba1072ffea5ae7eae1800
+cp %{_builddir}/corosync-3.1.1/LICENSE %{buildroot}/usr/share/package-licenses/corosync/87bb10215fd2b4c06b1ba1072ffea5ae7eae1800
 %make_install
 
 %files
@@ -252,7 +252,7 @@ cp %{_builddir}/corosync-3.1.0/LICENSE %{buildroot}/usr/share/package-licenses/c
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libcfg.so.7
-/usr/lib64/libcfg.so.7.1.0
+/usr/lib64/libcfg.so.7.3.0
 /usr/lib64/libcmap.so.4
 /usr/lib64/libcmap.so.4.1.0
 /usr/lib64/libcorosync_common.so.4

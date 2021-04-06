@@ -6,10 +6,13 @@ libcfg.so.7:corosync_cfg_get_node_addrs
 libcfg.so.7:corosync_cfg_initialize
 libcfg.so.7:corosync_cfg_kill_node
 libcfg.so.7:corosync_cfg_local_get
+libcfg.so.7:corosync_cfg_node_status_get
 libcfg.so.7:corosync_cfg_reload_config
 libcfg.so.7:corosync_cfg_reopen_log_files
 libcfg.so.7:corosync_cfg_replyto_shutdown
 libcfg.so.7:corosync_cfg_ring_status_get
+libcfg.so.7:corosync_cfg_trackstart
+libcfg.so.7:corosync_cfg_trackstop
 libcfg.so.7:corosync_cfg_try_shutdown
 libcmap.so.4:COROSYNC_CMAP_1.0
 libcmap.so.4:cmap_context_get
