@@ -1,5 +1,3 @@
 libc.so.6
 libknet.so.1
-libpthread.so.0
 libqb.so.100
-librt.so.1
