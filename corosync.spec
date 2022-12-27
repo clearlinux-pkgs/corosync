@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xDFD015CA555CB020 (discuss@corosync.org)
 #
 Name     : corosync
-Version  : 3.1.5
-Release  : 7
-URL      : https://github.com/corosync/corosync/releases/download/v3.1.5/corosync-3.1.5.tar.gz
-Source0  : https://github.com/corosync/corosync/releases/download/v3.1.5/corosync-3.1.5.tar.gz
-Source1  : https://github.com/corosync/corosync/releases/download/v3.1.5/corosync-3.1.5.tar.gz.asc
+Version  : 3.1.7
+Release  : 8
+URL      : https://github.com/corosync/corosync/releases/download/v3.1.7/corosync-3.1.7.tar.gz
+Source0  : https://github.com/corosync/corosync/releases/download/v3.1.7/corosync-3.1.7.tar.gz
+Source1  : https://github.com/corosync/corosync/releases/download/v3.1.7/corosync-3.1.7.tar.gz.asc
 Summary  : corosync
 Group    : Development/Tools
 License  : BSD-3-Clause
@@ -92,15 +92,15 @@ man components for the corosync package.
 
 
 %prep
-%setup -q -n corosync-3.1.5
-cd %{_builddir}/corosync-3.1.5
+%setup -q -n corosync-3.1.7
+cd %{_builddir}/corosync-3.1.7
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1628268946
+export SOURCE_DATE_EPOCH=1672167887
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -120,10 +120,10 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1628268946
+export SOURCE_DATE_EPOCH=1672167887
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/corosync
-cp %{_builddir}/corosync-3.1.5/LICENSE %{buildroot}/usr/share/package-licenses/corosync/87bb10215fd2b4c06b1ba1072ffea5ae7eae1800
+cp %{_builddir}/corosync-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/corosync/87bb10215fd2b4c06b1ba1072ffea5ae7eae1800
 %make_install
 
 %files
