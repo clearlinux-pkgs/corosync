@@ -1,0 +1,15 @@
+/etc/:
+/etc/corosync/service.d:
+/etc/corosync/uidgid.d:
+/etc/corosync:
+/etc/init.d:
+/etc/logrotate.d:
+corosync
+corosync
+corosync
+corosync-notifyd
+corosync.conf.example
+init.d
+logrotate.d
+service.d
+uidgid.d
